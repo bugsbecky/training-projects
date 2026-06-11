@@ -1,0 +1,16 @@
+.faq-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.active {
+    max-height: 200px;
+}
+
+.click {
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+}

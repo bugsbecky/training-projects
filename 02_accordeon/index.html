@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ-Bereich</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="faqs">
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    <h3 class="question" id="q-dom-explanation">
+                    Was ist die DOM
+                    </h3>
+                    <button class="toggle-btn">toggle</button>
+                </div>
+                <div class="faq-item-body">
+                    <p>DOM steht für Document-Object-Model. Sobald die URL aufegrufen wird, sendet das Backend das HTML-Document an den Browser, welcher daraus die DOM entwickelt. Diese speichert die Elemente der Webseite als Objekte lokal auf der client-side. Diese können durch JavaScript beeinflusst werden.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    <h3 class="question" id="q-dom-explanation">
+                    Was ist DOM-Manipulation und wofür brauche ich das?
+                    </h3>
+                    <button class="toggle-btn">toggle</button>
+                </div>
+                <div class="faq-item-body">
+                    <p>DOM-Manipulation verändert DOM-Objekte per JavaScript, um Webseiten interaktiv zu machen (z. B. Dark Mode). Häufig verwendet man das, um neue Klassen via element.classList.add("name") hinzuzufügen. Damit diese neuen Klassen den alten Stil überschreiben, müssen die neuen CSS-Regeln weiter unten stehen (Kaskade) oder eine höhere Spezifität besitzen.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

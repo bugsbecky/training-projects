@@ -1,0 +1,26 @@
+:root {
+    --bd-color: #faf0f6;
+    --accent-color: #ffe8e8;
+    --bg-color: #fff5ee;
+    --text-color: #bc8f8f;
+}
+
+[data-theme="dark"] {
+    --bd-color: #9f9f9f;
+    --accent-color: #6a89a7;
+    --bg-color: #6a7277;
+    --text-color: #f5f5f5;
+}
+
+body {
+    background-color: var(--bd-color);    
+}
+
+p, h1 {
+   color: var(--text-color); 
+}
+
+#lightswitch {
+    border-color: var(--accent-color);
+    background-color: var(--bg-color);
+}

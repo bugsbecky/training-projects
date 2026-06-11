@@ -1,0 +1,58 @@
+Was ich heute gelernt habe: 22.05.2026
+
+HTML header:
+<main> bedeutet:
+<meta charset="UTF-8"> und <meta name="viewport" content="width=device-width, initial-scale=1,0"> ist wichtig, setzt generelle Infos für den Browser
+
+inputfelder mit Text:
+- input-felder sind selbstschließend
+- der type muss definiert werden (text)
+- Placeholder konfigurieren
+- required lässt Feld zu einem Pflichtfeld werden
+
+CSS: 
+CSS-Variablen/CSS Custom Properties mit :root{...}
+
+Was ich heute gelernt habe: 01.06.2026
+
+IP-Adressen: 
+IP = Internet Protocoll
+sie adressieren Server, IoT-Geräte
+ISP (=Internet Service Provider) muss IP adresse zuweisen, wird z.B. bei jedem neustart neu vergeben. 
+Zeitstempel + IP = Fingerabdruck (personenbezogene Daten) auch bei dynamischen IP-Adressen
+ISO OSI? 
+
+IPv4 vs. IPv6:
+IPv4: z.B.: 142.250.185.99 -> bestehen aus 4 Oktetten (jeweils 8 binärzahlen). => daher zahlen von 0 - 255 möglich (0=00000000=kleinste Binärzahl, 255=11111111= größte Binärzahl); 4x8 Bit -> also 32 Bit lang
+
+
+
+Datenübertragung:
+Kommunikation über Pakete, jeweilige IP-Adresse des Senders bzw. des Empfängers wird vermerkt, IP-Adressen im Internet (öffentliche IP-Adressen) sind meistens statisch, private IP-Adressen sind meist nicht statisch
+
+Öffentliche vs. private/lokale IP-Adresse:
+Lokale IP-Adresse nur innerhalb des Heimnetzwerkes, nicht von außen adressierbar, fangen mit 10.xx.xx.xx; 172.xx.xx.xx oder mit 192.xx.xx.xx an
+Localhost/Loopback-Adresse: 127.0.0.1 (=virtueller server des Computers)
+
+herausfinden der IP-Adresse:
+whatismyip.com -> öffentliche IP-Adresse
+lokale IP-Adresse herausfinden: im Terminal "ip addr" eingeben
+IP-Adresse einer Webseite herausfinden: dig beispielwebsite.de +short
+
+DNS-Protokoll:
+
+VPN = Virtual Private Network
+
+was ich heute gelernt habe: 03.06.2026
+MAC-Adressen:
+- Die MAC-Adresse wird vom Hersteller vergeben
+- sie ist zur Netzwerkkarte und ist dadurch Hardware-Fixiert
+- wird nur im LAN (lokalen Netzwerk) verwendet
+- Format: XX:XX:XX:XX:XX:XX; die ersten sechs ziffern stehen für die Hersteller-Kennung, letzten drei für die Geräte-Kennung
+- bestehen aus 48 Bit, 6 Bytes
+
+OSI-Schicht: 
+
+Was ich heute gelernt habe: 10.06.2026
+
+wofür das Attribut "defer" im Code? Der Browser lädt das Document im Hintergrund und wartet mit der ausführung, bis das gesamte HTML-Dokument geladen ist

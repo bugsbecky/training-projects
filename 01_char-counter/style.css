@@ -1,0 +1,15 @@
+:root {
+    --standard-txt-color: #002B3D;
+    --character-counter-color: #888885;
+    --error-color: #640414;
+    --inactive-color: #888885;
+}
+
+.input-count {
+    color: var(--character-counter-color);
+    font-family: monospace;
+}
+
+.error {
+    color: var(--error-color);
+}

@@ -1,0 +1,39 @@
+:root{
+    --main-text-color: #8B7D6B;
+    --accent-color: #BC8F8F;
+    --standard-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-text-color);
+    font-family: var(--standard-font);
+}
+
+#start-question{
+    display: flex;
+    justify-content: center;
+    color: var(--main-text-color);
+    font-family: var(--standard-font);
+}
+
+#choice-btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.choice-btn{
+    color: var(--main-text-color);
+    font-family: var(--standard-font);
+    padding: 2%;
+    border-color: var(--accent-color);
+}
+
+#choice-output{
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+}
