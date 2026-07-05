@@ -102,12 +102,28 @@ function checkWin(player) { //player e.g. x/o
         checkDiagonalWin(player) === true;
 }
 
+function restartBtn (){
+    const restartBtn = document.createElement("button");
+    restartBtn.textContent = "restart";
+    restartBtn.id.add("restart-btn");
+    document.body.appendChild(restartBtn);
+
+    const restartButton = document.getElementById("restart-btn");
+    const playerMarkOnBoard = document.getElementsByClassName("")
+    restartButton.addEventListener ("click") {
+
+    }
+}
+
 function winEvent(){
     if (checkWin(currentPlayer)) {
         const winnerText = document.createElement("p");
         //winnerText.textContent = "Player " + currentPlayer + " has won!";
-        winnerText.textContent = `player "${currentPlayer}" has won`;
+        winnerText.textContent = `Player "${currentPlayer}" has won`;
+        winnerText.classList.add("winner-text");
         document.body.appendChild(winnerText);
+
+        restartBtn();
     }
 }
 
