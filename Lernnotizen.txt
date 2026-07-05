@@ -56,3 +56,20 @@ OSI-Schicht:
 Was ich heute gelernt habe: 10.06.2026
 
 wofür das Attribut "defer" im Code? Der Browser lädt das Document im Hintergrund und wartet mit der ausführung, bis das gesamte HTML-Dokument geladen ist
+
+
+Ip-Verundung:
+
+192.168.178.22/24	11000000.10101000.010110010.000010110
+255.255.255.0		11111111.11111111.111111111.000000000
+192.168.178.0		11000000.10101000.010110010.000000000
+
+Aufgabe 6 (tic-tac-toe) Programmierer Basics: 
+
+Konsept:
+
+Html: eine Div mit 6 weiteren Divs für das Spielfeld
+
+CSS: divs mit hilfe von "grid" justieren
+
+js: 1. User ist immer X, computer immer O; der User klickt auf ein Spielfeld -> das spiel wird gestartet (for-Schleife mit btn wird zu <p>X</p> -> comuter sucht ein random btn aus -> btn wird zu <p>O</p> -> kontrolle ob schon 3xX oder 3xO in einer Reihe sind -> wenn ja dann spiel beenden mit O = "Computer has won", X = "You have won" (Object verwenden); wenn nein aufforderung das user nächsten zug setzt
