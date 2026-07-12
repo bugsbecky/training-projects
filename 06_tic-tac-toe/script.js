@@ -101,21 +101,38 @@ function checkWin(player) { //player e.g. x/o
         checkColumnWin(player) === true || 
         checkDiagonalWin(player) === true;
 }
+function restartUi() {
+//alle Btns im Playfield
+    const playFieldBtns = document.querySelectorAll("play-field-btn"); //querySelector beinhaltet eine loop -> forEach
+    playFieldBtns.forEach(btn => {      
+        btn.textContent = "";
+        btn.disabled = false;
+    });
+    console.log("playFieldBtns =", playFieldBtns)
+    return;
+};
 
-function restartBtn (){
-    const restartBtn = document.createElement("button");
-    restartBtn.textContent = "restart";
-    restartBtn.id.add("restart-btn");
-    document.body.appendChild(restartBtn);
+function restartLogic() {
+    currentPlayer = "X";
+    gameActive = "true";
+    console.log("game Active =", gameActive);
+    console.log("Player-ID =", currentPlayer);
+};
 
-    const restartButton = document.getElementById("restart-btn");
+function restartBtn() {
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "restart";
+    restartButton.classList.add("restart-btn");
+    document.body.appendChild(restartButton);
+
     const playerMarkOnBoard = document.getElementsByClassName("")
-    restartButton.addEventListener ("click") {
-
-    }
+    restartButton.addEventListener ("click", function(event) {
+        restartUi();
+        restartLogic();
+    });
 }
 
-function winEvent(){
+function winEvent() {
     if (checkWin(currentPlayer)) {
         const winnerText = document.createElement("p");
         //winnerText.textContent = "Player " + currentPlayer + " has won!";
@@ -123,11 +140,16 @@ function winEvent(){
         winnerText.classList.add("winner-text");
         document.body.appendChild(winnerText);
 
+        gameActive = false;
+        console.log("gameActive =", gameActive);
+
         restartBtn();
+        
     }
 }
 
 playField.addEventListener("click", function(event) {
+    const playFieldBtns = document.getElementsByClassName("play-field-btn");
     const clickedBtn = event.target;
 
     if (clickedBtn.tagName === "BUTTON") { /*in caps weil Browser Element in caps zurück gibt*/
