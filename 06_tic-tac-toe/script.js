@@ -103,7 +103,7 @@ function checkWin(player) { //player e.g. x/o
 }
 function restartUi() {
 //alle Btns im Playfield
-    const playFieldBtns = document.querySelectorAll("play-field-btn"); //querySelector beinhaltet eine loop -> forEach
+    const playFieldBtns = document.querySelectorAll(".play-field-btn"); //querySelector beinhaltet eine loop -> forEach
     playFieldBtns.forEach(btn => {      
         btn.textContent = "";
         btn.disabled = false;
