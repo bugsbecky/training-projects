@@ -152,7 +152,7 @@ playField.addEventListener("click", function(event) {
     const playFieldBtns = document.getElementsByClassName("play-field-btn");
     const clickedBtn = event.target;
 
-    if (clickedBtn.tagName === "BUTTON") { /*in caps weil Browser Element in caps zurück gibt*/
+    if (clickedBtn.tagName === "BUTTON" && gameActive === true) { /*in caps weil Browser Element in caps zurück gibt*/
         const row = Number(clickedBtn.dataset.row);
         const col = Number(clickedBtn.dataset.col);
 
