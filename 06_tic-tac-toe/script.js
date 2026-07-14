@@ -117,6 +117,12 @@ function restartLogic() {
     gameActive = "true";
     console.log("game Active =", gameActive);
     console.log("Player-ID =", currentPlayer);
+
+    const playFieldBtns2 = document.querySelectorAll(".play-field-btn");
+    playFieldBtns2.forEach(btn => {
+        btn.classList.remove("player-o-mark");
+        btn.classList.remove("player-x-mark");
+    })
 };
 
 function restartBtn() {
