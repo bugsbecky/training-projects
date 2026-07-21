@@ -40,9 +40,9 @@ ls css
 ls js
 ```
 
-- [ ] `pwd` ends with `projects/01-weather-dashboard`
-- [ ] `index.html` exists
-- [ ] `css/styles.css` exists
+- [x] `pwd` ends with `projects/01-weather-dashboard`
+- [x] `index.html` exists
+- [x] `css/styles.css` exists
 - [ ] `js/api.js`, `js/ui.js`, and `js/app.js` exist
 - [ ] Install Live Server or plan to use `npx serve .`
 - [ ] Skim [structure.md](./structure.md)
@@ -78,10 +78,10 @@ curl "https://geocoding-api.open-meteo.com/v1/search?name=London&count=1"
 
 ### HTML
 
-- [ ] Create `index.html` with semantic structure
-- [ ] Add `<title>Weather Dashboard</title>`
-- [ ] Link your CSS: `<link rel="stylesheet" href="css/styles.css">`
-- [ ] Add search `<form id="search-form">` and `<input id="search-input">`
+- [x] Create `index.html` with semantic structure
+- [x] Add `<title>Weather Dashboard</title>`
+- [x] Link your CSS: `<link rel="stylesheet" href="css/styles.css">`
+- [x] Add search `<form id="search-form">` and `<input id="search-input">`
 - [ ] Add placeholders: `#loading`, `#error`, `#current-weather`, `#forecast`, `#recent-searches`
 - [ ] Use `<span id="weather-icon">` for emoji or optional local icons
 - [ ] Add script tags later, after the JavaScript files have useful code
@@ -95,6 +95,8 @@ Tiny starter idea:
   <button type="submit">Search</button>
 </form>
 ```
+
+
 
 ### CSS
 
@@ -128,6 +130,8 @@ curl "https://geocoding-api.open-meteo.com/v1/search?name=London&count=1"
 - [ ] Find `latitude`
 - [ ] Find `longitude`
 
+
+
 ### Experiment 2: `fetch` without waiting
 
 Paste in DevTools Console:
@@ -148,6 +152,8 @@ fetch('https://geocoding-api.open-meteo.com/v1/search?name=London&count=1')
   .then(response => response.json())
   .then(data => console.log(data.results[0]));
 ```
+
+
 
 ### Experiment 4: `fetch` with `async/await`
 
@@ -172,6 +178,7 @@ testCity();
 **Why:** The rest of your app should not care about exact URLs. It should ask simple functions like `getWeatherForCity('London')`.
 
 **Do:**
+
 - [ ] Create `js/api.js`
 - [ ] Add `geocodeCity(city)` — fetch Open-Meteo geocoding API
 - [ ] Handle empty `results` → throw "City not found"
@@ -191,6 +198,7 @@ testCity();
 **Why:** API data is just raw data until your UI turns it into something humans can read.
 
 **Do:**
+
 - [ ] Create `js/ui.js`
 - [ ] `showLoading()` / `hideLoading()`
 - [ ] `showError(message)` / `hideError()`
@@ -209,6 +217,7 @@ testCity();
 **Why:** This is where separate pieces become one app.
 
 **Do:**
+
 - [ ] Create `js/app.js`
 - [ ] Form submit handler with `preventDefault`, validation
 - [ ] showLoading → getWeatherForCity → display → hideLoading
@@ -226,9 +235,12 @@ testCity();
 **Why:** `localStorage` is a tiny browser shelf. You can put strings there and read them after refresh.
 
 **Do:**
+
 - [ ] `saveRecentSearch(city)` — localStorage, dedupe, max 5
 - [ ] `renderRecentSearches()` — clickable chips
 - [ ] Load on page open
+
+
 
 ## Phase 8: Forecast polish (≈1 hour)
 
@@ -238,12 +250,16 @@ Open-Meteo returns daily forecast in the same call as current weather — wire u
 - [ ] Max/min temps per day
 - [ ] Weather emoji per day
 
+
+
 ## Phase 9: Polish & edge cases (≈2 hours)
 
 - [ ] Empty input → friendly error
 - [ ] Invalid city → "City not found" (empty geocode results)
 - [ ] Network offline → catch fetch errors
 - [ ] Test "São Paulo", "New York"
+
+
 
 ## Phase 10: Deploy & document (≈1 hour)
 
@@ -252,10 +268,13 @@ Open-Meteo returns daily forecast in the same call as current weather — wire u
 **Goal:** Share the finished app.
 
 **Do:**
+
 - [ ] README screenshot + live URL
 - [ ] Push to GitHub
 - [ ] Deploy GitHub Pages
 - [ ] Verify live site (no keys to worry about — Open-Meteo is public)
+
+
 
 ## Success checklist
 
@@ -265,8 +284,11 @@ Open-Meteo returns daily forecast in the same call as current weather — wire u
 - [ ] Handle invalid city and network errors
 - [ ] Recent searches persist after refresh
 
+
+
 ## Stuck?
 
 - [FAQ](./help/faq.md)
 - [Troubleshooting](./help/troubleshooting.md)
 - [Code reference](./code-reference.md)
+
