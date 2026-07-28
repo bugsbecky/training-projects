@@ -1,5 +1,10 @@
 const cityForm = document.getElementById("city-form");
 
+function showError(message) {
+    const weatherDiv = document.getElementById("weather");
+    weatherDiv.innerHTML = `<p>${message}</p>`;
+}
+
 function weatherOutput(Data){
     const times = Data.daily.time;
 
@@ -16,16 +21,20 @@ function weatherOutput(Data){
 
         console.log("daily Weather: ", date, maxTemp+unit, minTemp+unit);
 
+        const dayWeatherDiv = document.createElement("div");
+        dayWeatherDiv.classList.add("day-weather");
+        weatherDiv.appendChild(dayWeatherDiv);
+
         const dateOutput = document.createElement("p");
         dateOutput.classList.add("weather-date");
         dateOutput.textContent = date;
 
         const temperatureOutput = document.createElement("p");
         temperatureOutput.classList.add("weather-temperature");
-        temperatureOutput.textContent = maxTemp+unit, minTemp+unit;
+        temperatureOutput.textContent = `min:${minTemp + unit} - max:${maxTemp + unit}`;
 
-        weatherDiv.appendChild(dateOutput);
-        weatherDiv.appendChild(temperatureOutput);
+        dayWeatherDiv.appendChild(dateOutput);
+        dayWeatherDiv.appendChild(temperatureOutput);
     }
 }
 /*for-Schleife für das Wetter unter daily -> time, 
@@ -58,6 +67,10 @@ async function getWeatherInformation (city) {
     const geoData = await geoResponse.json();
 
     console.log("Coordinates :", geoData);
+    if (!geoData.results || geoData.results.length === 0){
+        showError(`${city} not found, Try other spelling.`);
+        return;
+    }
 
     getWeatherData(geoData);
 };
