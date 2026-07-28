@@ -11,7 +11,7 @@ function weatherOutput(Data){
     const weatherDiv = document.getElementById("weather");
     weatherDiv.innerHTML = "";
     weatherDiv.classList.add("weather-div")
-    console.log(document.getElementById("weather"));
+    //console.log(document.getElementById("weather"));
 
     for (let i = 0; i < times.length; i++) {
         const date = times[i];
@@ -19,7 +19,7 @@ function weatherOutput(Data){
         const maxTemp = Data.daily.temperature_2m_max[i];
         const minTemp = Data.daily.temperature_2m_min[i];
 
-        console.log("daily Weather: ", date, maxTemp+unit, minTemp+unit);
+        //console.log("daily Weather: ", date, maxTemp+unit, minTemp+unit);
 
         const dayWeatherDiv = document.createElement("div");
         dayWeatherDiv.classList.add("day-weather");
@@ -37,26 +37,24 @@ function weatherOutput(Data){
         dayWeatherDiv.appendChild(temperatureOutput);
     }
 }
-/*for-Schleife für das Wetter unter daily -> time, 
-dann integrierte Forschleife für temperature_2m_max und temperature_2m_min*/
 
-async function getWeatherData (URL) {
+async function getWeatherData (geoData) {
     const geoParams = new URLSearchParams({
-        latitude: URL.results[0].latitude,
-        longitude: URL.results[0].longitude,
+        latitude: geoData.results[0].latitude,
+        longitude: geoData.results[0].longitude,
         timezone: 'auto',
         forecast_days: '5',
         current: 'temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code',
         daily: 'weather_code,temperature_2m_max,temperature_2m_min',
     });
 
-    console.log(geoParams.toString());
+    //console.log(geoParams.toString());
 
     const weatherAtLocationURL = 'https://api.open-meteo.com/v1/forecast';
     const weatherAtLocationResponse = await fetch(`${weatherAtLocationURL}?${geoParams}`); 
     const weatherAtLocationData = await weatherAtLocationResponse.json();
 
-    console.log("Weather: ", weatherAtLocationData); 
+    //console.log("Weather: ", weatherAtLocationData); 
     weatherOutput(weatherAtLocationData);
 
 }
@@ -66,13 +64,19 @@ async function getWeatherInformation (city) {
     const geoResponse  = await fetch(geoURL);
     const geoData = await geoResponse.json();
 
-    console.log("Coordinates :", geoData);
+    //console.log("Coordinates :", geoData);
+
+    if (!city.trim()){
+        showError("Please type a city name");
+        return;
+    }
+
     if (!geoData.results || geoData.results.length === 0){
         showError(`${city} not found, Try other spelling.`);
         return;
     }
 
-    getWeatherData(geoData);
+    await getWeatherData(geoData);
 };
 
 cityForm.addEventListener("submit", (event) => {
@@ -81,7 +85,7 @@ cityForm.addEventListener("submit", (event) => {
     const cityInput = document.getElementById("city-input");
     const cityName = cityInput.value;
 
-    console.log("City Name: ", cityName);
+    //console.log("City Name: ", cityName);
 
     getWeatherInformation(cityName);
     cityInput.value = "";
