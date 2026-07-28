@@ -1,0 +1,9 @@
+label[for="city-form"] {
+    display: none;
+}
+
+.weather-div {
+    display: grid;
+    
+}
+
