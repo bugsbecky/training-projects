@@ -5,7 +5,7 @@ public class StringBuilderDemo {
         builder.append(": ");
         builder.append(3);
 
-        String message = "%s costs %s 2".formatted("Notebook", 4.5,);
+        String message = "%s costs %s 2".formatted("Notebook", 4.5);
         System.out.println(builder.toString());
         System.out.println(message);
     }
